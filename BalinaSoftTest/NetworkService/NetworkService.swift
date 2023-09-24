@@ -14,7 +14,7 @@ final class NetworkService {
   
   static let url = "https://junior.balinasoft.com/api/v2/photo/type"
   
-  func fetchPhotoTypes(page: Int, completion: @escaping (Result<Page, Error>) -> Void) {
+  func fetchData(page: Int, completion: @escaping (Result<Page, Error>) -> Void) {
     let urlString = "\(NetworkService.url)?page=\(page)"
     
     guard let url = URL(string: urlString) else {
@@ -106,7 +106,6 @@ final class NetworkService {
               }
           }
       }
-      
       task.resume()
   }
   

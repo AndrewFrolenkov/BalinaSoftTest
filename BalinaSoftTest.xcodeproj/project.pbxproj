@@ -19,6 +19,7 @@
 		52B6E6452AC085A200F1D523 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6442AC085A200F1D523 /* CustomCell.swift */; };
 		52B6E6482AC0870400F1D523 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6472AC0870400F1D523 /* NetworkService.swift */; };
 		52B6E64A2AC0873800F1D523 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6492AC0873800F1D523 /* Page.swift */; };
+		52B6E64C2AC0A73700F1D523 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E64B2AC0A73700F1D523 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		52B6E6442AC085A200F1D523 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		52B6E6472AC0870400F1D523 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		52B6E6492AC0873800F1D523 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		52B6E64B2AC0A73700F1D523 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				52B6E6492AC0873800F1D523 /* Page.swift */,
+				52B6E64B2AC0A73700F1D523 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				52B6E64A2AC0873800F1D523 /* Page.swift in Sources */,
 				52B6E6432AC0825B00F1D523 /* UIColor + Extension.swift in Sources */,
 				52B6E6452AC085A200F1D523 /* CustomCell.swift in Sources */,
+				52B6E64C2AC0A73700F1D523 /* User.swift in Sources */,
 				521AAA742AC079180036E385 /* AppDelegate.swift in Sources */,
 				52B6E6482AC0870400F1D523 /* NetworkService.swift in Sources */,
 				521AAA762AC079180036E385 /* SceneDelegate.swift in Sources */,

@@ -23,6 +23,7 @@ class ListViewController: UIViewController {
   private var isLoadingData = false // флаг для отслеживания первоначальной загрузки
   private var isLoadingDataPage = false // Флаг для отслеживания загрузки данных
   private var selectedID = 0
+  private var user: User?
   
   // MARK: Model
   var page: Page?
@@ -109,7 +110,7 @@ extension ListViewController {
   func fetchPhotosFromServer() {
     tableView.tableFooterView = nil
     activityIndicatorCenter.startAnimating()
-    NetworkService.shared.fetchPhotoTypes(page: 0) { [weak self] result in
+    NetworkService.shared.fetchData(page: 0) { [weak self] result in
       switch result {
       case .success(let page):
         // Обновите массив photos с данными о фотографиях
@@ -163,7 +164,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
           hideActivityIndicator()
           createAlertController()
         } else {
-          NetworkService.shared.fetchPhotoTypes(page: currentPage) { [weak self] result in
+          NetworkService.shared.fetchData(page: currentPage) { [weak self] result in
             switch result {
             case .success(let page):
               self?.currentPage += 1
@@ -185,7 +186,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     guard let selectedID = page?.content[indexPath.row].id else { return }
-    self.selectedID = selectedID
+    self.user = User(id: selectedID, name: "Frolenkov Andrew Anatolievich")
     openCamera()
   }
 }
@@ -232,16 +233,19 @@ extension ListViewController: UIImagePickerControllerDelegate, UINavigationContr
     picker.dismiss(animated: true, completion: nil)
     // Получаем выбранное изображение
     if let image = info[.originalImage] as? UIImage {
-      NetworkService.shared.uploadPhoto(name: "Frolenkov Andrew Anatolievich", photo: image, typeId: selectedID) { success, error in
-        if success {
-          DispatchQueue.main.async {
-            // Ваш код обновления интерфейса здесь
+      if let user = user {
+        NetworkService.shared.uploadPhoto(name: user.name, photo: image, typeId: user.id) { success, error in
+          if success {
+            DispatchQueue.main.async {
+              // Ваш код обновления интерфейса здесь
+            }
+          } else {
+            // Обработка ошибки загрузки
+            print("Ошибка загрузки: \(error?.localizedDescription ?? "Неизвестная ошибка")")
           }
-        } else {
-          // Обработка ошибки загрузки
-          print("Ошибка загрузки: \(error?.localizedDescription ?? "Неизвестная ошибка")")
         }
       }
+      
     }
   }
 }
