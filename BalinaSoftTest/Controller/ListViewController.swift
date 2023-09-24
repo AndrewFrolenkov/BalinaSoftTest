@@ -67,8 +67,8 @@ private extension ListViewController {
     tableView.delegate = self
   }
   
-  func createAlertController() {
-    let alert = UIAlertController(title: "Ошибка", message: "Все элементы загружены", preferredStyle: .alert)
+  func createAlertController(title: String, message: String) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
     
     let alertAction = UIAlertAction(title: "Ок", style: .default)
     alert.addAction(alertAction)
@@ -162,7 +162,7 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         showActivityIndicator()
         if currentPage == totalPage {
           hideActivityIndicator()
-          createAlertController()
+          createAlertController(title: "Ок", message: "Все элементы загружены")
         } else {
           NetworkService.shared.fetchData(page: currentPage) { [weak self] result in
             switch result {
@@ -234,10 +234,10 @@ extension ListViewController: UIImagePickerControllerDelegate, UINavigationContr
     // Получаем выбранное изображение
     if let image = info[.originalImage] as? UIImage {
       if let user = user {
-        NetworkService.shared.uploadPhoto(name: user.name, photo: image, typeId: user.id) { success, error in
+        NetworkService.shared.uploadPhoto(name: user.name, photo: image, typeId: user.id) { [weak self] success, error in
           if success {
             DispatchQueue.main.async {
-              // Ваш код обновления интерфейса здесь
+              self?.createAlertController(title: "Успешно!", message: "Фотография загружена на сервер")
             }
           } else {
             // Обработка ошибки загрузки
