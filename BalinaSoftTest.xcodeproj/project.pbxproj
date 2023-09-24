@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		521AAA742AC079180036E385 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA732AC079180036E385 /* AppDelegate.swift */; };
 		521AAA762AC079180036E385 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA752AC079180036E385 /* SceneDelegate.swift */; };
-		521AAA782AC079190036E385 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA772AC079180036E385 /* ViewController.swift */; };
-		521AAA7B2AC079190036E385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521AAA792AC079190036E385 /* Main.storyboard */; };
+		521AAA782AC079190036E385 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA772AC079180036E385 /* ListViewController.swift */; };
 		521AAA7D2AC0791A0036E385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 521AAA7C2AC0791A0036E385 /* Assets.xcassets */; };
 		521AAA802AC0791A0036E385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 521AAA7E2AC0791A0036E385 /* LaunchScreen.storyboard */; };
 		521AAA8B2AC0791A0036E385 /* BalinaSoftTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA8A2AC0791A0036E385 /* BalinaSoftTestTests.swift */; };
 		521AAA952AC0791A0036E385 /* BalinaSoftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA942AC0791A0036E385 /* BalinaSoftTestUITests.swift */; };
 		521AAA972AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA962AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift */; };
+		52B6E6432AC0825B00F1D523 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6422AC0825B00F1D523 /* UIColor + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +39,7 @@
 		521AAA702AC079180036E385 /* BalinaSoftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BalinaSoftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		521AAA732AC079180036E385 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		521AAA752AC079180036E385 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		521AAA772AC079180036E385 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		521AAA7A2AC079190036E385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		521AAA772AC079180036E385 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		521AAA7C2AC0791A0036E385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		521AAA7F2AC0791A0036E385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		521AAA812AC0791A0036E385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		521AAA902AC0791A0036E385 /* BalinaSoftTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BalinaSoftTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		521AAA942AC0791A0036E385 /* BalinaSoftTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalinaSoftTestUITests.swift; sourceTree = "<group>"; };
 		521AAA962AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalinaSoftTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		52B6E6422AC0825B00F1D523 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +99,12 @@
 		521AAA722AC079180036E385 /* BalinaSoftTest */ = {
 			isa = PBXGroup;
 			children = (
-				521AAA732AC079180036E385 /* AppDelegate.swift */,
-				521AAA752AC079180036E385 /* SceneDelegate.swift */,
-				521AAA772AC079180036E385 /* ViewController.swift */,
-				521AAA792AC079190036E385 /* Main.storyboard */,
-				521AAA7C2AC0791A0036E385 /* Assets.xcassets */,
-				521AAA7E2AC0791A0036E385 /* LaunchScreen.storyboard */,
-				521AAA812AC0791A0036E385 /* Info.plist */,
+				52B6E63B2AC07EA700F1D523 /* App Delegate */,
+				52B6E63C2AC07EBD00F1D523 /* Model */,
+				52B6E63E2AC07EFB00F1D523 /* View */,
+				52B6E63D2AC07EE600F1D523 /* Controller */,
+				52B6E6402AC0823F00F1D523 /* Extension */,
+				52B6E63F2AC07F1100F1D523 /* Resources */,
 			);
 			path = BalinaSoftTest;
 			sourceTree = "<group>";
@@ -125,6 +124,63 @@
 				521AAA962AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift */,
 			);
 			path = BalinaSoftTestUITests;
+			sourceTree = "<group>";
+		};
+		52B6E63B2AC07EA700F1D523 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				521AAA732AC079180036E385 /* AppDelegate.swift */,
+				521AAA752AC079180036E385 /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		52B6E63C2AC07EBD00F1D523 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52B6E63D2AC07EE600F1D523 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				521AAA772AC079180036E385 /* ListViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		52B6E63E2AC07EFB00F1D523 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52B6E63F2AC07F1100F1D523 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				521AAA7C2AC0791A0036E385 /* Assets.xcassets */,
+				521AAA7E2AC0791A0036E385 /* LaunchScreen.storyboard */,
+				521AAA812AC0791A0036E385 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		52B6E6402AC0823F00F1D523 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				52B6E6412AC0824A00F1D523 /* UIKit */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		52B6E6412AC0824A00F1D523 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				52B6E6422AC0825B00F1D523 /* UIColor + Extension.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +289,6 @@
 			files = (
 				521AAA802AC0791A0036E385 /* LaunchScreen.storyboard in Resources */,
 				521AAA7D2AC0791A0036E385 /* Assets.xcassets in Resources */,
-				521AAA7B2AC079190036E385 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				521AAA782AC079190036E385 /* ViewController.swift in Sources */,
+				521AAA782AC079190036E385 /* ListViewController.swift in Sources */,
+				52B6E6432AC0825B00F1D523 /* UIColor + Extension.swift in Sources */,
 				521AAA742AC079180036E385 /* AppDelegate.swift in Sources */,
 				521AAA762AC079180036E385 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		521AAA792AC079190036E385 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				521AAA7A2AC079190036E385 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		521AAA7E2AC0791A0036E385 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,10 +492,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7G79D48L69;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BalinaSoftTest/Info.plist;
+				INFOPLIST_FILE = BalinaSoftTest/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,10 +519,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7G79D48L69;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BalinaSoftTest/Info.plist;
+				INFOPLIST_FILE = BalinaSoftTest/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
