@@ -17,6 +17,8 @@
 		521AAA972AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA962AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift */; };
 		52B6E6432AC0825B00F1D523 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6422AC0825B00F1D523 /* UIColor + Extension.swift */; };
 		52B6E6452AC085A200F1D523 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6442AC085A200F1D523 /* CustomCell.swift */; };
+		52B6E6482AC0870400F1D523 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6472AC0870400F1D523 /* NetworkService.swift */; };
+		52B6E64A2AC0873800F1D523 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6492AC0873800F1D523 /* Page.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		521AAA962AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalinaSoftTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		52B6E6422AC0825B00F1D523 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		52B6E6442AC085A200F1D523 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		52B6E6472AC0870400F1D523 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		52B6E6492AC0873800F1D523 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				52B6E63B2AC07EA700F1D523 /* App Delegate */,
+				52B6E6462AC086E500F1D523 /* NetworkService */,
 				52B6E63C2AC07EBD00F1D523 /* Model */,
 				52B6E63E2AC07EFB00F1D523 /* View */,
 				52B6E63D2AC07EE600F1D523 /* Controller */,
@@ -140,6 +145,7 @@
 		52B6E63C2AC07EBD00F1D523 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52B6E6492AC0873800F1D523 /* Page.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +190,14 @@
 				52B6E6422AC0825B00F1D523 /* UIColor + Extension.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		52B6E6462AC086E500F1D523 /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				52B6E6472AC0870400F1D523 /* NetworkService.swift */,
+			);
+			path = NetworkService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,9 +331,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				521AAA782AC079190036E385 /* ListViewController.swift in Sources */,
+				52B6E64A2AC0873800F1D523 /* Page.swift in Sources */,
 				52B6E6432AC0825B00F1D523 /* UIColor + Extension.swift in Sources */,
 				52B6E6452AC085A200F1D523 /* CustomCell.swift in Sources */,
 				521AAA742AC079180036E385 /* AppDelegate.swift in Sources */,
+				52B6E6482AC0870400F1D523 /* NetworkService.swift in Sources */,
 				521AAA762AC079180036E385 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
