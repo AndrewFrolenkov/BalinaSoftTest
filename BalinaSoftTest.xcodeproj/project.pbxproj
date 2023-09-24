@@ -16,6 +16,7 @@
 		521AAA952AC0791A0036E385 /* BalinaSoftTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA942AC0791A0036E385 /* BalinaSoftTestUITests.swift */; };
 		521AAA972AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521AAA962AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift */; };
 		52B6E6432AC0825B00F1D523 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6422AC0825B00F1D523 /* UIColor + Extension.swift */; };
+		52B6E6452AC085A200F1D523 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B6E6442AC085A200F1D523 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		521AAA942AC0791A0036E385 /* BalinaSoftTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalinaSoftTestUITests.swift; sourceTree = "<group>"; };
 		521AAA962AC0791A0036E385 /* BalinaSoftTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalinaSoftTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		52B6E6422AC0825B00F1D523 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		52B6E6442AC085A200F1D523 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +155,7 @@
 		52B6E63E2AC07EFB00F1D523 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				52B6E6442AC085A200F1D523 /* CustomCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 			files = (
 				521AAA782AC079190036E385 /* ListViewController.swift in Sources */,
 				52B6E6432AC0825B00F1D523 /* UIColor + Extension.swift in Sources */,
+				52B6E6452AC085A200F1D523 /* CustomCell.swift in Sources */,
 				521AAA742AC079180036E385 /* AppDelegate.swift in Sources */,
 				521AAA762AC079180036E385 /* SceneDelegate.swift in Sources */,
 			);
