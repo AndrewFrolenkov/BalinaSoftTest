@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import AVFoundation
+
+enum Constants {
+       static let cellHeight: CGFloat = 100.0
+   }
 
 // MARK: - ListViewController
 class ListViewController: UIViewController {
@@ -13,15 +18,14 @@ class ListViewController: UIViewController {
   // MARK: - Private Property
   private lazy var tableView = UITableView()
   private lazy var activityIndicatorCenter = UIActivityIndicatorView()
-  var currentPage = 1
-  var totalPage = 0
-  var isLoadingData = false // флаг для отслеживания первоначальной загрузки
-  var isLoadingDataPage = false // Флаг для отслеживания загрузки данных
+  private var currentPage = 1
+  private var totalPage = 0
+  private var isLoadingData = false // флаг для отслеживания первоначальной загрузки
+  private var isLoadingDataPage = false // Флаг для отслеживания загрузки данных
+  private var selectedID = 0
   
   // MARK: Model
   var page: Page?
-  
-  
   
   // MARK: - Override Methods
   override func viewDidLoad() {
@@ -135,14 +139,14 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let page = page?.content[indexPath.row]
+    guard let page = page else { return UITableViewCell() }
     let cell = tableView.dequeueReusableCell(withIdentifier: CustomCell.reuseId, for: indexPath) as! CustomCell
-    cell.nameLabel.text = page?.name
+    cell.nameLabel.text = page.content[indexPath.row].name
     return cell
   }
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-    return 100.0
+    return Constants.cellHeight
   }
   
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -174,6 +178,68 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
               self?.isLoadingDataPage = false // Снимаем флаг при ошибке
             }
           }
+        }
+      }
+    }
+  }
+  
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    guard let selectedID = page?.content[indexPath.row].id else { return }
+    self.selectedID = selectedID
+    openCamera()
+  }
+}
+
+// MARK: - Camera
+extension ListViewController {
+  func openCamera() {
+    if AVCaptureDevice.authorizationStatus(for: .video) == .authorized {
+               // Если у нас есть доступ к камере, открываем ее
+               let imagePicker = UIImagePickerController()
+               imagePicker.sourceType = .camera
+               imagePicker.delegate = self
+               present(imagePicker, animated: true, completion: nil)
+    } else {
+      // Если нет доступа, запрашиваем разрешение
+      AVCaptureDevice.requestAccess(for: .video) { granted in
+        if granted {
+          // Разрешение получено, открываем камеру
+          DispatchQueue.main.async {
+                      // Создаем и настраиваем UIImagePickerController в главном потоке
+                      let imagePicker = UIImagePickerController()
+                      imagePicker.sourceType = .camera
+                      imagePicker.delegate = self
+                      self.present(imagePicker, animated: true, completion: nil)
+                  }
+        } else {
+          // Разрешение не получено, выводим сообщение пользователю
+          DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Нет доступа к камере", message: "Пожалуйста, предоставьте доступ к камере в настройках приложения.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(okAction)
+            self.present(alert, animated: true, completion: nil)
+          }
+        }
+      }
+    }
+  }
+}
+
+// MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
+extension ListViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    // Закрываем UIImagePickerController
+    picker.dismiss(animated: true, completion: nil)
+    // Получаем выбранное изображение
+    if let image = info[.originalImage] as? UIImage {
+      NetworkService.shared.uploadPhoto(name: "Frolenkov Andrew Anatolievich", photo: image, typeId: selectedID) { success, error in
+        if success {
+          DispatchQueue.main.async {
+            // Ваш код обновления интерфейса здесь
+          }
+        } else {
+          // Обработка ошибки загрузки
+          print("Ошибка загрузки: \(error?.localizedDescription ?? "Неизвестная ошибка")")
         }
       }
     }
